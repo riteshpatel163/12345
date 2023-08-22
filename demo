@@ -1,0 +1,34 @@
+pipeline{
+    agent any 
+        stages {
+            stage("1"){
+                steps{
+                    echo "hi,this is patel"
+                }
+             }
+            stage("2"){
+                steps{
+                    input('want more')
+                    
+                    
+                }
+            
+            }
+            stage("3"){
+                steps{
+                    echo "hellooooooooooo"
+                }
+            }
+        }   
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
